@@ -1,0 +1,41 @@
+/* Button Styles */
+.button {
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-background-color: #000000;
+    -fx-padding: 14 16;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
+    -fx-min-width: 100%;
+    -fx-transition: background-color 0.7s ease, -fx-effect 0.7s ease;
+    -fx-alignment: CENTER-LEFT;
+}
+
+#btnPayBill {
+    -fx-font-family: "Arial";
+    -fx-font-weight: bold;
+    -fx-font-size: 25px;
+    -fx-text-fill: white;
+    -fx-background-color: #000000;
+    -fx-padding: 14 16;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
+    -fx-min-width: 100%;
+    -fx-transition: background-color 0.7s ease, -fx-effect 0.7s ease;
+}
+
+.button:hover, #btnPayBill:hover {
+    -fx-background-color: linear-gradient(to right, #000000, #4c0000, #000000);
+    -fx-effect: dropshadow(three-pass-box, rgba(128, 0, 0, 0.3), 10, 0, 0, 0);
+}
+
+.button:pressed {
+    -fx-background-color: #5a0000;
+}
