@@ -128,6 +128,70 @@ public class LoginController {
     }
 
     @FXML
+    void btnResetPassword(ActionEvent event) {
+        if (txtOTP.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("OTP cannot be empty");
+            alert.show();
+            return;
+        }
+
+        if (!txtOTP.getText().equals(otp)) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Invalid OTP");
+            alert.show();
+            return;
+        }
+
+        if (txtNewPassword.getText().isEmpty() || txtConfirmPassword.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Password cannot be empty");
+            alert.show();
+            return;
+        }
+
+        if (!txtNewPassword.getText().equals(txtConfirmPassword.getText())) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Password doesn't match");
+            alert.show();
+            return;
+        }
+
+        BasicTextEncryptor textEncryptor = new BasicTextEncryptor();
+        textEncryptor.setPassword("ClothifySecureKey");
+        String encryptedPassword = textEncryptor.encrypt(txtNewPassword.getText().trim());
+
+        UserDTO passwordUpdatedUser = userService.updatePassword(txtForgotEmail.getText(), encryptedPassword);
+
+        if (passwordUpdatedUser != null) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Success");
+            alert.setHeaderText("Password updated successfully");
+            alert.show();
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/home.fxml"));
+                Stage stage = (Stage) txtForgotEmail.getScene().getWindow();
+                stage.setScene(new Scene(loader.load()));
+                stage.setTitle("Clothify");
+                stage.setResizable(false);
+                stage.centerOnScreen();
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Password update failed");
+            alert.show();
+        }
+    }
+
+    @FXML
     void btnSendOTP(ActionEvent event) {
         if (txtForgotEmail.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
