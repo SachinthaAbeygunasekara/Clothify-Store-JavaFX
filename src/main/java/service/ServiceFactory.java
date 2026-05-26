@@ -1,0 +1,21 @@
+package service;
+
+import service.custom.impl.UserServiceImpl;
+import util.ServiceType;
+
+public class ServiceFactory {
+    private static ServiceFactory serviceFactory;
+
+    private ServiceFactory() {}
+
+    public static ServiceFactory getInstance() {
+        return serviceFactory == null? serviceFactory = new ServiceFactory(): serviceFactory;
+    }
+
+    public <T extends SuperService> T getServiceType(ServiceType serviceType){
+        switch (serviceType){
+            case USER: return (T) UserServiceImpl.getInstance();
+        }
+        return null;
+    }
+}
