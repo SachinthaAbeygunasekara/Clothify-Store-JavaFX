@@ -127,8 +127,71 @@ public class LoginController {
         scene.setRoot(loginView);
     }
 
+    @FXML
+    void btnSendOTP(ActionEvent event) {
+        if (txtForgotEmail.getText().isEmpty()) {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error");
+            alert.setHeaderText("Email cannot be empty");
+            alert.show();
+        } else {
+            otp = generateOTP();
+            sendOtpEmail(txtForgotEmail.getText(), otp);
+        }
+    }
 
+    private String generateOTP() {
+        String otp = "";
+        Random rand = new Random();
+        for (int i = 0; i < 6; i++) {
+            otp += rand.nextInt(10);
+        }
+        return otp;
+    }
 
+    private void sendOtpEmail(String recipientEmail, String otp) {
+        String host = "smtp.gmail.com";
+        final String user = "clothify.store.app@gmail.com";
+        final String password = "kjdo icma qwuv jlml";
 
+        Properties properties = new Properties();
+        properties.put("mail.smtp.host", host);
+        properties.put("mail.smtp.port", "587");
+        properties.put("mail.smtp.auth", "true");
+        properties.put("mail.smtp.starttls.enable", "true");
+
+        Session session = Session.getInstance(properties, new Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication() {
+                return new PasswordAuthentication(user, password);
+            }
+        });
+
+        try {
+            MimeMessage message = new MimeMessage(session);
+            message.setFrom(new InternetAddress(user));
+            message.addRecipient(Message.RecipientType.TO, new InternetAddress(recipientEmail));
+            message.setSubject("Reset Your Password - Clothify Store");
+
+            String emailContent = "<html><body>"
+                    + "<h2>Clothify Store</h2>"
+                    + "<p>Hello,</p>"
+                    + "<p>You requested to reset your password at Clothify Store. Please use the following OTP to proceed:</p>"
+                    + "<h2 style='color: #007BFF;'>" + otp + "</h2>"
+                    + "<p>If you did not request a password reset, please ignore this email.</p>"
+                    + "<p>Thank you for choosing Clothify Store!</p>"
+                    + "<p>Best Regards,<br/>The Clothify Store Team</p>"
+                    + "</body></html>";
+
+            message.setContent(emailContent, "text/html");
+            Transport.send(message);
+
+            txtOTP.setEditable(true);
+            txtNewPassword.setEditable(true);
+            txtConfirmPassword.setEditable(true);
+        } catch (MessagingException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
