@@ -49,6 +49,18 @@ public class LoginController {
     private PasswordField txtLoginPassword;
 
     @FXML
+    private PasswordField txtConfirmPassword;
+
+    @FXML
+    private TextField txtForgotEmail;
+
+    @FXML
+    private PasswordField txtNewPassword;
+
+    @FXML
+    private TextField txtOTP;
+
+    @FXML
     void btnLoginOnAction(ActionEvent event) {
         if (txtLoginEmail.getText().isEmpty() || txtLoginPassword.getText().isEmpty()) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -92,6 +104,15 @@ public class LoginController {
 
     @FXML
     void lblForgotPasswordOnAction(MouseEvent event) {
+        try {
+            AnchorPane signUpView = FXMLLoader.load(
+                    getClass().getResource("/view/forgot-password-form.fxml")
+            );
+            containerPane.getChildren().clear();
+            containerPane.getChildren().add(signUpView);
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
