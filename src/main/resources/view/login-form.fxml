@@ -46,7 +46,6 @@
             <JFXButton fx:id="btnLogin" layoutX="101.0" layoutY="434.0" onAction="#btnLoginOnAction" prefHeight="44.0" prefWidth="290.0" text="Log in" />
             <Label layoutX="136.0" layoutY="566.0" prefHeight="17.0" prefWidth="244.0" text="Copyright © 2025 SachinthaAbeygunasekara" />
             <Label layoutX="197.0" layoutY="583.0" prefHeight="17.0" prefWidth="98.0" text="All rights reserved" />
-            <JFXButton fx:id="btnSignUp" layoutX="100.0" layoutY="486.0" onAction="#btnSignUpOnAction" prefHeight="44.0" prefWidth="290.0" text="Create an Account" />
          </children>
       </AnchorPane>
    </children>
