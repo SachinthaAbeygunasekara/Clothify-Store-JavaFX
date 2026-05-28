@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="883.0" prefWidth="1100.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CreateUserAccountController">
+   <children>
+      <JFXButton fx:id="btnCreateAccount" layoutX="442.0" layoutY="708.0" onAction="#btnCreateAccountOnAction" prefHeight="52.0" prefWidth="239.0" text="Create Account" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="369.0" layoutY="408.0" text="Email">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtEmail" layoutX="367.0" layoutY="435.0" prefHeight="45.0" prefWidth="389.0" />
+      <PasswordField fx:id="txtPassword" layoutX="367.0" layoutY="523.0" prefHeight="45.0" prefWidth="389.0" />
+      <Label layoutX="369.0" layoutY="494.0" text="Password">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="txtConfirmPassword" layoutX="367.0" layoutY="613.0" prefHeight="45.0" prefWidth="389.0" />
+      <Label layoutX="369.0" layoutY="584.0" text="Confirm Password">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="cmbRole" layoutX="366.0" layoutY="337.0" prefHeight="45.0" prefWidth="389.0" promptText="Select User Role" />
+      <Label layoutX="371.0" layoutY="305.0" text="User Role">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtName" layoutX="367.0" layoutY="241.0" prefHeight="45.0" prefWidth="389.0" />
+      <Label layoutX="367.0" layoutY="217.0" text="User Name">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="366.0" layoutY="124.0" prefHeight="73.0" prefWidth="445.0" text="Create User Account">
+         <font>
+            <Font name="Bodoni MT" size="43.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
