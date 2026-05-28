@@ -82,11 +82,19 @@ public class LoginController {
                     stage.setTitle("Clothify");
                     stage.setResizable(false);
                     stage.centerOnScreen();
+
+                    HomeController homeController = loader.getController();
+                    homeController.setCurrentUser(loginUser);
+
+                    DashboardController dashboardController = new DashboardController();
+                    dashboardController.setCurrentUser(loginUser);
+
                 } catch (IOException e) {
                     Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setTitle("Error");
                     alert.setHeaderText("Unable to load the home view.");
                     alert.show();
+
                 }
             }
         }
@@ -179,6 +187,12 @@ public class LoginController {
                 stage.setTitle("Clothify");
                 stage.setResizable(false);
                 stage.centerOnScreen();
+
+                HomeController homeController = loader.getController();
+                homeController.setCurrentUser(passwordUpdatedUser);
+
+                DashboardController dashboardController = new DashboardController();
+                dashboardController.setCurrentUser(passwordUpdatedUser);
 
             } catch (IOException e) {
                 throw new RuntimeException(e);
