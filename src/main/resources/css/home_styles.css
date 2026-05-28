@@ -1,41 +1,103 @@
-/* Button Styles */
-.button {
-    -fx-font-family: "Arial";
-    -fx-font-size: 14px;
-    -fx-text-fill: white;
-    -fx-background-color: #000000;
-    -fx-padding: 14 16;
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
-    -fx-cursor: hand;
-    -fx-border-width: 0;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
-    -fx-min-width: 100%;
-    -fx-transition: background-color 0.7s ease, -fx-effect 0.7s ease;
-    -fx-alignment: CENTER-LEFT;
+/* Root Styling */
+* {
+    -fx-font-family: "Segoe UI", "Helvetica", sans-serif;
 }
 
-#btnPayBill {
-    -fx-font-family: "Arial";
+/* Sidebar Styling */
+.sidebar {
+    -fx-background-color: #1a1a1a;
+    -fx-padding: 0;
+    -fx-text-fill: #ffffff;
+}
+
+.logo-section {
+    -fx-padding: 20 20 10 20;
+    -fx-border-color: #333;
+    -fx-border-width: 0 0 1 0;
+    -fx-spacing: 15;
+}
+
+.nav-scroll {
+    -fx-fit-to-width: true;
+    -fx-padding: 10 10 10 10;
+    -fx-background-color: #1a1a1a;
+}
+
+.nav-scroll .viewport {
+    -fx-padding: 0;
+}
+
+.nav-menu {
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-background-color: #1a1a1a;
+}
+
+/* Navigation Buttons */
+.nav-button {
+    -fx-font-size: 13px;
+    -fx-text-fill: #cccccc;
+    -fx-background-color: transparent;
+    -fx-padding: 12 15;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-min-height: 40;
+}
+
+.nav-button:hover {
+    -fx-background-color: #2a2a2a;
+    -fx-text-fill: #ffffff;
+}
+
+.nav-button-active {
+    -fx-background-color: #ff6b6b;
+    -fx-text-fill: #ffffff;
     -fx-font-weight: bold;
-    -fx-font-size: 25px;
-    -fx-text-fill: white;
-    -fx-background-color: #000000;
-    -fx-padding: 14 16;
-    -fx-border-radius: 8;
-    -fx-background-radius: 8;
-    -fx-cursor: hand;
-    -fx-border-width: 0;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0, 0, 0);
-    -fx-min-width: 100%;
-    -fx-transition: background-color 0.7s ease, -fx-effect 0.7s ease;
 }
 
-.button:hover, #btnPayBill:hover {
-    -fx-background-color: linear-gradient(to right, #000000, #4c0000, #000000);
-    -fx-effect: dropshadow(three-pass-box, rgba(128, 0, 0, 0.3), 10, 0, 0, 0);
+.nav-button-active:hover {
+    -fx-background-color: #ff5252;
 }
 
-.button:pressed {
-    -fx-background-color: #5a0000;
+.nav-bottom {
+    -fx-padding: 10;
+    -fx-alignment: BOTTOM_CENTER;
+    -fx-spacing: 10;
+    -fx-vgrow: ALWAYS;
+    -fx-background-color: #1a1a1a;
+}
+
+.logout-button {
+    -fx-background-color: #c92a2a;
+    -fx-text-fill: #ffffff;
+}
+
+.logout-button:hover {
+    -fx-background-color: #a61e1e;
+}
+
+/* Separator */
+.separator {
+    -fx-border-color: #333;
+    -fx-padding: 5 0;
+}
+
+/* Content Scroll */
+.content-scroll {
+    -fx-fit-to-width: true;
+    -fx-background-color: #f8f9fa;
+}
+
+.content-scroll .viewport {
+    -fx-background-color: #f8f9fa;
+}
+
+/* Content Area */
+.content-area {
+    -fx-padding: 30;
+    -fx-background-color: #f8f9fa;
+    -fx-spacing: 20;
 }
