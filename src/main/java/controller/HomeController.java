@@ -96,8 +96,16 @@ public class HomeController {
     
     @FXML
     private void handleEmployeeManagement() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/employee.fxml"));
+            AnchorPane pane = loader.load();
+            containerPane.getChildren().clear();
+            containerPane.getChildren().add(pane);
+        } catch (IOException e) {
+            e.printStackTrace();
+            showError("Error", "Failed to load Employee Management view");
+        }
         updateNavigationButtonStyle(btnEmployee);
-        showNotification("Employee Management", "Feature coming soon!");
     }
     
     @FXML
