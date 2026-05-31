@@ -1,5 +1,6 @@
 package service;
 
+import service.custom.impl.CustomerServiceImpl;
 import service.custom.impl.EmployeeServiceImpl;
 import service.custom.impl.UserServiceImpl;
 import util.ServiceType;
@@ -17,6 +18,7 @@ public class ServiceFactory {
         switch (serviceType){
             case USER: return (T) UserServiceImpl.getInstance();
             case EMPLOYEE: return (T) EmployeeServiceImpl.getInstance();
+            case CUSTOMERS: return (T) CustomerServiceImpl.getInstance();
         }
         return null;
     }

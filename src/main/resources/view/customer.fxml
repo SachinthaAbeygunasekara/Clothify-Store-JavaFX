@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="883.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+   <children>
+      <AnchorPane fx:id="containerPane" prefHeight="883.0" prefWidth="1100.0">
+         <children>
+            <Label layoutX="362.0" layoutY="40.0" prefHeight="60.0" prefWidth="700.0" text="Customer Management">
+               <font>
+                  <Font name="Bodoni MT" size="40.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSearchCustomer" layoutX="263.0" layoutY="131.0" prefHeight="42.0" prefWidth="325.0" />
+            <JFXButton layoutX="603.0" layoutY="131.0" onAction="#btnSearchCustomerOnAction" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: #000000;" text="Search" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="818.0" layoutY="131.0" onAction="#btnAddCustomerOnAction" prefHeight="42.0" prefWidth="126.0" style="-fx-background-color: #000000;" text="Add Customer" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="tblCustomerDetails" layoutX="34.0" layoutY="242.0" prefHeight="581.0" prefWidth="1034.0">
+               <columns>
+                  <TableColumn fx:id="colCustomerId" prefWidth="75.0" text="Customer Id" />
+                  <TableColumn fx:id="colCustomerName" prefWidth="253.0" text="Customer Name" />
+                  <TableColumn fx:id="colMobileNumber" prefWidth="296.0" text="Mobile Number" />
+                  <TableColumn fx:id="colCustomerAddress" prefWidth="169.0" text="Address" />
+                  <TableColumn fx:id="colCustomerUpdateAction" prefWidth="127.0" text="Update Action" />
+                  <TableColumn fx:id="colCustomerDeleteAction" prefWidth="113.0" text="Delete Action" />
+               </columns>
+            </TableView>
+            <JFXButton layoutX="705.0" layoutY="131.0" onAction="#btnClearSearchOnAction" prefHeight="42.0" prefWidth="107.0" style="-fx-background-color: #000000;" text="Clear Search" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
