@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="883.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.SupplierController">
+   <children>
+      <AnchorPane fx:id="containerPane" prefHeight="883.0" prefWidth="1100.0">
+         <children>
+            <Label layoutX="362.0" layoutY="40.0" prefHeight="60.0" prefWidth="700.0" text="Supplier Management">
+               <font>
+                  <Font name="Bodoni MT" size="40.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtSearchSupplier" layoutX="263.0" layoutY="131.0" prefHeight="42.0" prefWidth="325.0" promptText="Search by supplier name" />
+            <JFXButton layoutX="603.0" layoutY="131.0" onAction="#btnSearchSupplierOnAction" prefHeight="42.0" prefWidth="94.0" style="-fx-background-color: #000000;" text="Search" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton layoutX="818.0" layoutY="131.0" onAction="#btnAddSupplierOnAction" prefHeight="42.0" prefWidth="126.0" style="-fx-background-color: #000000;" text="Add Supplier" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+            <TableView fx:id="tblSupplier" layoutX="34.0" layoutY="242.0" prefHeight="581.0" prefWidth="1034.0">
+               <columns>
+                  <TableColumn fx:id="colSupplierId" prefWidth="67.0" text="Supplier Id" />
+                  <TableColumn fx:id="colSupplierName" prefWidth="182.0" text="Supplier Name" />
+                  <TableColumn fx:id="colSupplierCompany" prefWidth="173.0" text="Supplier Company" />
+                  <TableColumn fx:id="colSupplierEmail" prefWidth="246.0" text="Supplier Email" />
+                  <TableColumn fx:id="colSypplyItem" prefWidth="143.0" text="Item" />
+                  <TableColumn fx:id="colSupplierUpdateAction" prefWidth="121.0" text="Update Action" />
+                  <TableColumn fx:id="colSupplierDeleteAction" prefWidth="101.0" text="Delete Action" />
+               </columns>
+            </TableView>
+            <JFXButton layoutX="705.0" layoutY="131.0" onAction="#btnClearSearchOnAction" prefHeight="42.0" prefWidth="107.0" style="-fx-background-color: #000000;" text="Clear Search" textFill="WHITE">
+               <font>
+                  <Font size="13.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
