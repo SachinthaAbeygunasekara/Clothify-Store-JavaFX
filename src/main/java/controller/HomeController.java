@@ -118,8 +118,16 @@ public class HomeController {
     
     @FXML
     private void handleSupplierManagement() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/supplier.fxml"));
+            AnchorPane pane = loader.load();
+            containerPane.getChildren().clear();
+            containerPane.getChildren().add(pane);
+        } catch (IOException e) {
+            e.printStackTrace();
+            showError("Error", "Failed to load Customer Management view");
+        }
         updateNavigationButtonStyle(btnSupplier);
-        showNotification("Supplier Management", "Feature coming soon!");
     }
     
     @FXML
