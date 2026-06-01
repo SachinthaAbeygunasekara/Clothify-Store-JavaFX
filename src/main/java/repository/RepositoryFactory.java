@@ -1,5 +1,6 @@
 package repository;
 
+import repository.custom.OrderRepository;
 import repository.custom.impl.*;
 import util.RepositoryType;
 
@@ -18,6 +19,8 @@ public class RepositoryFactory {
             case CUSTOMERS:return (T) new CustomerRepositoryImpl();
             case SUPPLIER:return (T) new SupplierRepositoryImpl();
             case PRODUCT:return (T) new ProductRepositoryImpl();
+            case ORDERS:return (T) new OrderRepositoryImpl();
+            case ORDERPRODUCT:return (T) new OrderDetailRepositoryImpl();
         }
         return null;
 
