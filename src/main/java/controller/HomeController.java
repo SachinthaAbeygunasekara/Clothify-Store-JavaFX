@@ -106,8 +106,16 @@ public class HomeController {
     
     @FXML
     private void handleOrderHistory() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/order-history.fxml"));
+            AnchorPane pane = loader.load();
+            containerPane.getChildren().clear();
+            containerPane.getChildren().add(pane);
+        } catch (IOException e) {
+            e.printStackTrace();
+            showError("Error", "Failed to load Order History Management view");
+        }
         updateNavigationButtonStyle(btnOrder);
-        showNotification("Order History", "Feature coming soon!");
     }
     
     @FXML
