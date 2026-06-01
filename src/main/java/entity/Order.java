@@ -12,7 +12,7 @@ import java.util.List;
 @Getter
 @Setter
 @ToString(exclude = "orderDetailList")
-@Table(name = "`order`")
+@Table(name = "orders")
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
