@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.chart.AreaChart?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="883.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportController">
+   <children>
+      <Label layoutX="415.0" layoutY="32.0" prefHeight="60.0" prefWidth="271.0" text="System Reports">
+         <font>
+            <Font name="Bodoni MT" size="40.0" />
+         </font>
+      </Label>
+      <Rectangle fx:id="rect1" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="649.0" layoutX="13.0" layoutY="151.0" stroke="#e1e1e1" strokeType="INSIDE" strokeWidth="0.0" width="355.0" />
+      <Label layoutX="46.0" layoutY="190.0" prefHeight="32.0" prefWidth="171.0" text="Customer Reports">
+         <font>
+            <Font name="Bodoni MT" size="22.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="77.0" layoutY="735.0" onAction="#btnCustomerReportsOnAction" prefHeight="48.0" prefWidth="241.0" style="-fx-background-color: #000000;" text="Generate Customer Reports" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+      <BarChart fx:id="chartCustomer" layoutX="21.0" layoutY="241.0" prefHeight="503.0" prefWidth="340.0">
+         <xAxis>
+            <CategoryAxis side="BOTTOM" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis side="LEFT" />
+         </yAxis>
+      </BarChart>
+      <Rectangle fx:id="rect2" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="649.0" layoutX="373.0" layoutY="151.0" stroke="#e1e1e1" strokeType="INSIDE" strokeWidth="0.0" width="355.0" />
+      <Label layoutX="406.0" layoutY="190.0" prefHeight="32.0" prefWidth="133.0" text="Sale Reports">
+         <font>
+            <Font name="Bodoni MT" size="22.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="437.0" layoutY="735.0" onAction="#btnSalesReportsOnAction" prefHeight="48.0" prefWidth="241.0" style="-fx-background-color: #000000;" text="Generate Sales Reports" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+       <AreaChart fx:id="chartSales" layoutX="381.0" layoutY="241.0" prefHeight="503.0" prefWidth="340.0">
+          <xAxis>
+             <CategoryAxis side="BOTTOM" />
+          </xAxis>
+          <yAxis>
+             <NumberAxis side="LEFT" />
+          </yAxis>
+       </AreaChart>
+      <Rectangle fx:id="rect3" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="649.0" layoutX="734.0" layoutY="151.0" stroke="#e1e1e1" strokeType="INSIDE" strokeWidth="0.0" width="355.0" />
+      <Label layoutX="767.0" layoutY="190.0" prefHeight="32.0" prefWidth="162.0" text="Supplier Reports">
+         <font>
+            <Font name="Bodoni MT" size="22.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="798.0" layoutY="735.0" onAction="#btnSupplierReportsOnAction" prefHeight="48.0" prefWidth="241.0" style="-fx-background-color: #000000;" text="Generate Supplier Reports" textFill="WHITE">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </JFXButton>
+       <LineChart fx:id="chartSupplier" layoutX="742.0" layoutY="241.0" prefHeight="503.0" prefWidth="340.0">
+          <xAxis>
+             <CategoryAxis side="BOTTOM" />
+          </xAxis>
+          <yAxis>
+             <NumberAxis side="LEFT" />
+          </yAxis>
+       </LineChart>
+      <ComboBox fx:id="cmbSaleSortTime" layoutX="594.0" layoutY="190.0" onAction="#cmbSalesOnAction" prefHeight="32.0" prefWidth="111.0" />
+      <ComboBox fx:id="cmbProductCategories" layoutX="953.0" layoutY="190.0" onAction="#cmbProductCategoriesOnAction" prefHeight="32.0" prefWidth="111.0" />
+   </children>
+</AnchorPane>
