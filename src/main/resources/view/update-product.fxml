@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="853.0" prefWidth="600.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ProductController">
+   <children>
+      <Label layoutX="138.0" layoutY="29.0" prefHeight="60.0" prefWidth="326.0" text="Update Product">
+         <font>
+            <Font name="Bodoni MT" size="48.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtUpdateProductName" layoutX="90.0" layoutY="135.0" prefHeight="48.0" prefWidth="421.0" />
+      <JFXButton layoutX="205.0" layoutY="768.0" onAction="#btnUpdateProductOnAction" prefHeight="48.0" prefWidth="191.0" text="Update Product" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="90.0" layoutY="113.0" text="Product Name" />
+      <Label layoutX="90.0" layoutY="201.0" text="Product Category" />
+      <ComboBox fx:id="cmbUpdateProductCategory" layoutX="90.0" layoutY="224.0" prefHeight="48.0" prefWidth="421.0" promptText="Select Product Category" />
+      <Label layoutX="90.0" layoutY="294.0" text="Product Size" />
+      <ComboBox fx:id="cmbUpdateProductSize" layoutX="90.0" layoutY="317.0" prefHeight="48.0" prefWidth="421.0" promptText="Select product Size" />
+      <TextField fx:id="txtUpdateProductPrice" layoutX="90.0" layoutY="410.0" prefHeight="48.0" prefWidth="421.0" />
+      <Label layoutX="90.0" layoutY="388.0" text="Price" />
+      <TextField fx:id="txtUpdateProductQuantityOnHand" layoutX="90.0" layoutY="503.0" prefHeight="48.0" prefWidth="421.0" />
+      <Label layoutX="90.0" layoutY="481.0" text="Quantity  On Hand" />
+      <TextField fx:id="txtUpdateProductImagePath" layoutX="90.0" layoutY="596.0" prefHeight="48.0" prefWidth="362.0" />
+      <Label layoutX="90.0" layoutY="574.0" text="Product Image" />
+      <JFXButton layoutX="462.0" layoutY="687.0" onAction="#btnAddSupplierOnAction" prefHeight="48.0" prefWidth="49.0" text=" " textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/PlausIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+      <Label layoutX="90.0" layoutY="664.0" text="Supplier" />
+      <ComboBox fx:id="cmbUpdateProcutSupplierId" layoutX="90.0" layoutY="687.0" prefHeight="48.0" prefWidth="362.0" promptText="Select Supplier" />
+      <JFXButton layoutX="462.0" layoutY="596.0" onAction="#btnAddProductImageOnAction" prefHeight="48.0" prefWidth="49.0" text=" " textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/AddImageIcon.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>
