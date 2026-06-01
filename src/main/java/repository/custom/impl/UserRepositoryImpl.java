@@ -83,7 +83,7 @@ public class UserRepositoryImpl implements UserRepository {
 
     @Override
     public User getUserById(int id) {
-        String query = "SELECT * FROM user WHERE userId = ?";
+        String query = "SELECT * FROM user WHERE id = ?";
 
         try {
             PreparedStatement statement = DBConnection.getInstance().getConnection().prepareStatement(query);
@@ -97,7 +97,7 @@ public class UserRepositoryImpl implements UserRepository {
                         resultSet.getString("email"),
                         resultSet.getString("password"),
                         resultSet.getString("role"),
-                        resultSet.getString("registrationDate")
+                        resultSet.getString("regDate")
                 );
             }
             return null;
