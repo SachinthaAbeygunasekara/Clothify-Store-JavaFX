@@ -148,8 +148,16 @@ public class HomeController {
     
     @FXML
     private void handleReports() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/report.fxml"));
+            AnchorPane pane = loader.load();
+            containerPane.getChildren().clear();
+            containerPane.getChildren().add(pane);
+        } catch (IOException e) {
+            e.printStackTrace();
+            showError("Error", "Failed to load Report view");
+        }
         updateNavigationButtonStyle(btnReports);
-        showNotification("Reports", "Feature coming soon!");
     }
     
     @FXML
