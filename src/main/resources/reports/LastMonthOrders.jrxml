@@ -1,0 +1,118 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="LastMonthOrders2" language="java" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0c51d3b6-52c0-47ea-8985-c5451ba9a294">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="MySQL Path"/>
+	<query language="SQL"><![CDATA[SELECT * FROM orders 
+WHERE orderDate >= CURDATE() - INTERVAL 30 DAY]]></query>
+	<field name="orderId" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="orderId"/>
+		<property name="com.jaspersoft.studio.field.label" value="orderId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="orderDate" class="java.sql.Date">
+		<property name="com.jaspersoft.studio.field.name" value="orderDate"/>
+		<property name="com.jaspersoft.studio.field.label" value="orderDate"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="totalAmount" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.name" value="totalAmount"/>
+		<property name="com.jaspersoft.studio.field.label" value="totalAmount"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="paymentMethod" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="paymentMethod"/>
+		<property name="com.jaspersoft.studio.field.label" value="paymentMethod"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="employeeId" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="employeeId"/>
+		<property name="com.jaspersoft.studio.field.label" value="employeeId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<field name="customerId" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="customerId"/>
+		<property name="com.jaspersoft.studio.field.label" value="customerId"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="orders"/>
+	</field>
+	<background/>
+	<title height="72">
+		<element kind="frame" uuid="f5389740-4abc-4055-9da5-c28f1dd4cf86" mode="Opaque" x="-20" y="-20" width="595" height="92" backcolor="#750212">
+			<element kind="staticText" uuid="63a09510-8a4d-490d-b2c6-4b7d2c89754f" x="20" y="16" width="234" height="60" forecolor="#FFFFFF" fontName="Bodoni MT" fontSize="43.0" bold="false" vTextAlign="Middle">
+				<text><![CDATA[Clothify]]></text>
+			</element>
+			<element kind="staticText" uuid="74b606d6-2a10-40b5-95f9-9a4a680a12f8" x="395" y="37" width="180" height="20" forecolor="#FFFFFF" fontSize="13.0" bold="true" hTextAlign="Right">
+				<text><![CDATA[Last month - Sales Report]]></text>
+			</element>
+		</element>
+	</title>
+	<pageHeader height="13"/>
+	<columnHeader height="21">
+		<element kind="line" uuid="352e5624-c96a-43a9-968c-f5f4c37e6de9" x="-20" y="20" width="595" height="1" forecolor="#666666"/>
+		<element kind="staticText" uuid="6c5ff1b4-4e2e-4a47-9c68-8c93482d1462" mode="Opaque" x="0" y="0" width="70" height="20" forecolor="#990308" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Left">
+			<text><![CDATA[Order Id]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1df0495a-7a38-4f36-ba94-540668f8cec4"/>
+		</element>
+		<element kind="staticText" uuid="79dca78e-a695-4b78-b133-40ae9987a7d6" mode="Opaque" x="70" y="0" width="114" height="20" forecolor="#990308" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Left">
+			<text><![CDATA[Order Date]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="399bf527-f612-4c39-890f-2bd1be82b690"/>
+		</element>
+		<element kind="staticText" uuid="4252f6a6-8f03-442b-a9d4-1b0addf52753" mode="Opaque" x="184" y="0" width="104" height="20" forecolor="#990308" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Left">
+			<text><![CDATA[Total Amount]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="49ec7953-d282-44db-aa80-63d78d9da336"/>
+		</element>
+		<element kind="staticText" uuid="693a3651-a8ee-4229-a336-19fe12e5e472" mode="Opaque" x="289" y="0" width="92" height="20" forecolor="#990308" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Payment]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2d2d2a9f-94aa-484a-9d33-4bea4b8b4f83"/>
+		</element>
+		<element kind="staticText" uuid="90f063f4-78fa-4d38-bd44-2f6bf8da6adb" mode="Opaque" x="380" y="0" width="80" height="20" forecolor="#990308" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[User Id]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="da053f04-30fe-43da-a7d0-162b733f555e"/>
+		</element>
+		<element kind="staticText" uuid="80281126-f3ee-4131-8535-92523642bfff" mode="Opaque" x="460" y="0" width="92" height="20" forecolor="#990308" backcolor="#E6E6E6" fontSize="14.0" bold="true" hTextAlign="Center">
+			<text><![CDATA[Customer Id]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="10e39884-b6ba-42bc-b197-f1818e550cff"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="28">
+			<element kind="line" uuid="af747753-6ddf-4506-9ead-21083efb6f28" positionType="FixRelativeToBottom" x="0" y="26" width="555" height="1"/>
+			<element kind="textField" uuid="849202d2-20e3-4807-ab25-65b8b8939756" x="0" y="0" width="70" height="26" fontSize="12.0" textAdjust="StretchHeight" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{orderId}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1df0495a-7a38-4f36-ba94-540668f8cec4"/>
+			</element>
+			<element kind="textField" uuid="70239fd0-6031-47c1-9187-3fb9c41c1753" x="70" y="0" width="114" height="26" fontSize="12.0" textAdjust="StretchHeight" hTextAlign="Left" vTextAlign="Middle">
+				<expression><![CDATA[$F{orderDate}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="399bf527-f612-4c39-890f-2bd1be82b690"/>
+			</element>
+			<element kind="textField" uuid="607526d2-e9f6-4163-88bf-cf03949e6eb1" x="190" y="0" width="98" height="26" fontSize="12.0" textAdjust="StretchHeight" hTextAlign="Left" vTextAlign="Middle">
+				<expression><![CDATA[$F{totalAmount}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="49ec7953-d282-44db-aa80-63d78d9da336"/>
+			</element>
+			<element kind="textField" uuid="d5edb911-9e08-41c9-bab8-bbc0e3769ae3" x="289" y="0" width="92" height="26" fontSize="12.0" textAdjust="StretchHeight" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{paymentMethod}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2d2d2a9f-94aa-484a-9d33-4bea4b8b4f83"/>
+			</element>
+			<element kind="textField" uuid="3d61261e-c5cd-406b-9e6a-38b1c0b03119" x="380" y="0" width="80" height="26" fontSize="12.0" textAdjust="StretchHeight" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{employeeId}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="da053f04-30fe-43da-a7d0-162b733f555e"/>
+			</element>
+			<element kind="textField" uuid="9b302e79-bc26-46ce-ae3b-13ed67d499ee" x="460" y="0" width="92" height="26" fontSize="12.0" textAdjust="StretchHeight" hTextAlign="Center" vTextAlign="Middle">
+				<expression><![CDATA[$F{customerId}]]></expression>
+				<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="10e39884-b6ba-42bc-b197-f1818e550cff"/>
+			</element>
+		</band>
+	</detail>
+	<columnFooter/>
+	<pageFooter height="17">
+		<element kind="textField" uuid="2127dfd4-e8cb-476a-9519-b9d928d45e47" mode="Opaque" x="0" y="4" width="515" height="13" backcolor="#E6E6E6" hTextAlign="Right">
+			<expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+		</element>
+		<element kind="textField" uuid="dafb72e3-76d0-45b7-adb4-af4682088b67" mode="Opaque" x="515" y="4" width="40" height="13" backcolor="#E6E6E6" evaluationTime="Report">
+			<expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+		</element>
+		<element kind="textField" uuid="778cfc9b-e2a5-458d-8bb9-bfb2fe74ab93" x="0" y="4" width="100" height="13" pattern="EEEEE dd MMMMM yyyy">
+			<expression><![CDATA[new java.util.Date()]]></expression>
+		</element>
+	</pageFooter>
+	<summary/>
+</jasperReport>
